@@ -2,7 +2,7 @@
 #include "ui_categorydialog.h"
 #include "models.h"
 
-CategoryDialog::CategoryDialog(QWidget *parent):
+CategoryDialog::CategoryDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CategoryDialog)
 {

@@ -14,8 +14,10 @@ CustomerDialog::~CustomerDialog()
     delete ui;
 }
 
-void CustomerDialog::on_buttonBox_accepted() {
-    if (db.open()) {
+void CustomerDialog::on_buttonBox_accepted()
+{
+    if (db.open())
+    {
         QSqlQuery q(db);
         q.prepare("CALL RegisterCustomer(:name);");
         q.bindValue(":name", ui->name->text());

@@ -3,9 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui {
-class SuppliersForm;
-}
+namespace Ui { class SuppliersForm; }
 
 class SuppliersForm : public QWidget
 {

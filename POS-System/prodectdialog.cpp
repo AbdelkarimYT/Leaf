@@ -5,7 +5,7 @@
 #include "categorydialog.h"
 
 
-ProdectDialog::ProdectDialog(QWidget *parent):
+ProdectDialog::ProdectDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ProdectDialog)
 {

@@ -2,7 +2,7 @@
 #include "ui_sellingform.h"
 #include "models.h"
 
-SellingForm::SellingForm(QWidget *parent):
+SellingForm::SellingForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SellingForm)
 {

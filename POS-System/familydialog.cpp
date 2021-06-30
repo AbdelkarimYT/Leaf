@@ -2,15 +2,20 @@
 #include "ui_familydialog.h"
 #include "models.h"
 
-FamilyDialog::FamilyDialog(QWidget *parent) : QDialog(parent), ui(new Ui::FamilyDialog) {
+FamilyDialog::FamilyDialog(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::FamilyDialog)
+{
     ui->setupUi(this);
 }
 
-FamilyDialog::~FamilyDialog() {
+FamilyDialog::~FamilyDialog()
+{
     delete ui;
 }
 
-void FamilyDialog::on_buttonBox_accepted() {
+void FamilyDialog::on_buttonBox_accepted()
+{
     if (db.open())
     {
         QSqlQuery query(db);

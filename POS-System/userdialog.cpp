@@ -2,7 +2,10 @@
 #include "ui_userdialog.h"
 #include "models.h"
 
-UserDialog::UserDialog(QWidget *parent) : QDialog(parent), ui(new Ui::UserDialog) {
+UserDialog::UserDialog(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::UserDialog)
+{
     ui->setupUi(this);
 }
 

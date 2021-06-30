@@ -6,8 +6,8 @@
 
 namespace Ui { class ProdectsForm; }
 
-class ProdectsForm : public QWidget {
-
+class ProdectsForm : public QWidget
+{
     Q_OBJECT
 
 public:

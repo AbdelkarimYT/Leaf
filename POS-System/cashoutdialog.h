@@ -1,0 +1,4 @@
+#ifndef CASHOUTDIALOG_H
+#define CASHOUTDIALOG_H
+
+#endif // CASHOUTDIALOG_H

@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/Icons">
+        <file>res/customer.png</file>
+        <file>res/trolley.png</file>
+        <file>res/app.jpg</file>
+        <file>res/user.png</file>
+        <file>res/category.png</file>
+        <file>res/family-tree.png</file>
+        <file>res/add.png</file>
+        <file>res/delete.png</file>
+        <file>res/update.png</file>
+        <file>res/barcode.png</file>
+    </qresource>
+    <qresource prefix="/Backgrounds">
+        <file>res/splash.jpg</file>
+    </qresource>
+</RCC>

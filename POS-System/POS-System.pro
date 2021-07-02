@@ -24,7 +24,8 @@ SOURCES += \
     sellingform.cpp \
     supplierdialog.cpp \
     suppliersform.cpp \
-    userdialog.cpp
+    userdialog.cpp \
+    usersform.cpp
 
 HEADERS += \
     categorydialog.h \
@@ -42,7 +43,8 @@ HEADERS += \
     sellingform.h \
     supplierdialog.h \
     suppliersform.h \
-    userdialog.h
+    userdialog.h \
+    usersform.h
 
 FORMS += \
     categorydialog.ui \
@@ -59,7 +61,8 @@ FORMS += \
     sellingform.ui \
     supplierdialog.ui \
     suppliersform.ui \
-    userdialog.ui
+    userdialog.ui \
+    usersform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

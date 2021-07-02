@@ -7,6 +7,8 @@ ProdectsForm::ProdectsForm(QWidget *parent) :
     ui(new Ui::ProdectsForm)
 {
     ui->setupUi(this);
+    ui->familysTable->setModel(familys);
+    ui->categorysTable->setModel(categorys);
     ui->prodectsTabel->setModel(prodects);
 }
 

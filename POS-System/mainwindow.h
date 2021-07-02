@@ -32,6 +32,8 @@ private slots:
 
     void on_ordersBtn_clicked();
 
+    void on_usersBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

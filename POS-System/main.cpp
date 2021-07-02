@@ -3,11 +3,12 @@
 #include "models.h"
 
 #include <QApplication>
+#include <QSettings>
 #include <QSplashScreen>
 #include <QPixmap>
 #include <QMessageBox>
 
-QSqlDatabase db;
+QSqlDatabase   db;
 QSqlTableModel *prodects;
 QSqlTableModel *customers;
 QSqlTableModel *suppliers;
@@ -16,13 +17,14 @@ QSqlTableModel *cashOut;
 QSqlTableModel *familys;
 QSqlTableModel *categorys;
 QSqlTableModel *orders;
+QSqlTableModel *users;
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication  a(argc, argv);
     QSplashScreen splash(QPixmap(":/Backgrounds/res/splash.jpg"));
-    LoginDialog d(nullptr);
-    MainWindow w;
+    LoginDialog   d(nullptr);
+    MainWindow    w;
 
     //a.setStyle("Fusion");
     splash.show();
@@ -39,16 +41,18 @@ int main(int argc, char *argv[])
         if (!d.exec())
             return 0;
 
-        prodects = new QSqlTableModel(nullptr, db);
+        prodects  = new QSqlTableModel(nullptr, db);
+        users     = new QSqlTableModel(nullptr, db);
         customers = new QSqlTableModel(nullptr, db);
         suppliers = new QSqlTableModel(nullptr, db);
-        cashIn = new QSqlTableModel(nullptr, db);
-        cashOut = new QSqlTableModel(nullptr, db);
-        familys = new QSqlTableModel(nullptr, db);
+        cashIn    = new QSqlTableModel(nullptr, db);
+        cashOut   = new QSqlTableModel(nullptr, db);
+        familys   = new QSqlTableModel(nullptr, db);
         categorys = new QSqlTableModel(nullptr, db);
-        orders = new QSqlTableModel(nullptr, db);
+        orders    = new QSqlTableModel(nullptr, db);
 
         prodects->setTable("prodects");
+        users->setTable("users");
         customers->setTable("customers");
         suppliers->setTable("suppliers");
         cashIn->setTable("cash_in");
@@ -58,6 +62,7 @@ int main(int argc, char *argv[])
         orders->setTable("orders");
 
         prodects->select();
+        users->select();
         customers->select();
         suppliers->select();
         familys->select();

@@ -52,6 +52,7 @@ QStatusBar {
        <enum>QFrame::Plain</enum>
       </property>
       <widget class="SellingForm" name="sellingPage"/>
+      <widget class="UsersForm" name="usersPage"/>
       <widget class="OrdersForm" name="ordersPage"/>
       <widget class="ChashForm" name="chashPage"/>
       <widget class="SuppliersForm" name="suppliersPage"/>
@@ -60,7 +61,7 @@ QStatusBar {
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="title">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -70,10 +71,13 @@ QStatusBar {
       <property name="styleSheet">
        <string notr="true">background-color: #33b864;
 padding-left: 24px;
-padding-right: 24px;</string>
+padding-right: 24px;
+color: #fff;
+font: 75 16pt &quot;MS Shell Dlg 2&quot;;
+</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#ffffff;&quot;&gt;Prodects&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>Selling</string>
       </property>
      </widget>
     </item>
@@ -103,6 +107,10 @@ padding-right: 24px;</string>
          <property name="text">
           <string>Selling</string>
          </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/sale.png</normaloff>:/Icons/res/sale.png</iconset>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
@@ -128,6 +136,10 @@ padding-right: 24px;</string>
          <property name="text">
           <string>Prodects</string>
          </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/invoice.png</normaloff>:/Icons/res/invoice.png</iconset>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
@@ -146,6 +158,10 @@ padding-right: 24px;</string>
         <widget class="QPushButton" name="clientsBtn">
          <property name="text">
           <string>Clients</string>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/nv_customer.png</normaloff>:/Icons/res/nv_customer.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -166,6 +182,10 @@ padding-right: 24px;</string>
          <property name="text">
           <string>Suppliers</string>
          </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/delivery-man.png</normaloff>:/Icons/res/delivery-man.png</iconset>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
@@ -185,6 +205,10 @@ padding-right: 24px;</string>
          <property name="text">
           <string>Cash</string>
          </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/money.png</normaloff>:/Icons/res/money.png</iconset>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
@@ -203,6 +227,33 @@ padding-right: 24px;</string>
         <widget class="QPushButton" name="ordersBtn">
          <property name="text">
           <string>Orders</string>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/note.png</normaloff>:/Icons/res/note.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="usersBtn">
+         <property name="text">
+          <string>Users</string>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/user.png</normaloff>:/Icons/res/user.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -378,6 +429,12 @@ padding-right: 24px;</string>
    <class>OrdersForm</class>
    <extends>QWidget</extends>
    <header location="global">ordersform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>UsersForm</class>
+   <extends>QWidget</extends>
+   <header location="global">usersform.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

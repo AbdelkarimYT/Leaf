@@ -9,7 +9,7 @@
 #include <QSqlQuery>
 
 
-extern QSqlDatabase db;
+extern QSqlDatabase   db;
 extern QSqlTableModel *prodects;
 extern QSqlTableModel *suppliers;
 extern QSqlTableModel *customers;
@@ -18,6 +18,6 @@ extern QSqlTableModel *cashOut;
 extern QSqlTableModel *familys;
 extern QSqlTableModel *categorys;
 extern QSqlTableModel *orders;
-
+extern QSqlTableModel *users;
 
 #endif // MODELS_H

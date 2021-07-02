@@ -31,7 +31,7 @@
      <widget class="QWidget" name="cashIn">
       <attribute name="icon">
        <iconset resource="res.qrc">
-        <normaloff>:/Icons/res/add.png</normaloff>:/Icons/res/add.png</iconset>
+        <normaloff>:/Icons/res/up-arrow.png</normaloff>:/Icons/res/up-arrow.png</iconset>
       </attribute>
       <attribute name="title">
        <string>Cash In</string>
@@ -206,7 +206,7 @@
      <widget class="QWidget" name="cashOut">
       <attribute name="icon">
        <iconset resource="res.qrc">
-        <normaloff>:/Icons/res/delete.png</normaloff>:/Icons/res/delete.png</iconset>
+        <normaloff>:/Icons/res/down-arrow.png</normaloff>:/Icons/res/down-arrow.png</iconset>
       </attribute>
       <attribute name="title">
        <string>Cash Out</string>

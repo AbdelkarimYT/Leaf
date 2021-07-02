@@ -61,17 +61,21 @@ void MainWindow::on_actionAddClient_triggered()
 
 void MainWindow::on_sellingBtn_clicked()
 {
+   ui->title->setText("Selling");
    ui->content->setCurrentWidget(ui->sellingPage);
 }
 
 
 void MainWindow::on_prodectsBtn_clicked()
 {
+    ui->title->setText("Prodects");
     ui->content->setCurrentWidget(ui->prodectsPage);
 }
 
 
-void MainWindow::on_clientsBtn_clicked() {
+void MainWindow::on_clientsBtn_clicked()
+{
+    ui->title->setText("Clients");
     ui->content->setCurrentWidget(ui->clientsPage);
 }
 
@@ -91,18 +95,28 @@ void MainWindow::on_actionAddOrder_triggered()
 
 void MainWindow::on_cashBtn_clicked()
 {
+    ui->title->setText("Cash");
     ui->content->setCurrentWidget(ui->chashPage);
 }
 
 
 void MainWindow::on_suppliersBtn_clicked()
 {
+    ui->title->setText("Suppliers");
     ui->content->setCurrentWidget(ui->suppliersPage);
 }
 
 
 void MainWindow::on_ordersBtn_clicked()
 {
+    ui->title->setText("Orders");
     ui->content->setCurrentWidget(ui->ordersPage);
+}
+
+
+void MainWindow::on_usersBtn_clicked()
+{
+    ui->title->setText("Users");
+    ui->content->setCurrentWidget(ui->usersPage);
 }
 

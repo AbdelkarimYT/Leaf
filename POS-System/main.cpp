@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
     //a.setStyle("Fusion");
     splash.show();
 
-    db = QSqlDatabase::addDatabase("QMYSQL", "MainDbConnection");
+    db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setPort(3306);
-    db.setUserName("root");
+    db.setUserName("abdelkarim");
     db.setPassword("toor");
     db.setDatabaseName("pypos");
 
@@ -73,8 +73,9 @@ int main(int argc, char *argv[])
 
         MainWindow w;
         w.showMaximized();
+        //db.close();
         splash.finish(&w);
-        db.close();
+
         return a.exec();
     }
     else

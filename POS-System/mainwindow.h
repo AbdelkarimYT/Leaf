@@ -27,12 +27,11 @@ private slots:
     void on_actionAddSupplier_triggered();
     void on_actionAddOrder_triggered();
     void on_cashBtn_clicked();
-
     void on_suppliersBtn_clicked();
-
     void on_ordersBtn_clicked();
-
     void on_usersBtn_clicked();
+
+    void on_MainWindow_destroyed();
 
 private:
     Ui::MainWindow *ui;

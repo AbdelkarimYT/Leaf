@@ -14,6 +14,8 @@ ProdectDialog::ProdectDialog(QWidget *parent) :
     ui->category->setModel(categorys);
     ui->family->setModelColumn(2);
     ui->category->setModelColumn(2);
+    ui->category->setCurrentIndex(-1);
+    ui->family->setCurrentIndex(-1);
 }
 
 ProdectDialog::~ProdectDialog()

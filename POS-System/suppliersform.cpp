@@ -7,12 +7,7 @@ SuppliersForm::SuppliersForm(QWidget *parent) :
     ui(new Ui::SuppliersForm)
 {
     ui->setupUi(this);
-    if (db.open())
-    {
-        ui->suppliersTable->setModel(suppliers);
-        suppliers->select();
-        db.close();
-    }
+    ui->suppliersTable->setModel(suppliers);
 }
 
 SuppliersForm::~SuppliersForm()

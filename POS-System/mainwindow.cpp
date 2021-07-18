@@ -8,6 +8,7 @@
 #include "supplierdialog.h"
 #include "orderdialog.h"
 #include "ordersform.h"
+#include "models.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -118,5 +119,11 @@ void MainWindow::on_usersBtn_clicked()
 {
     ui->title->setText("Users");
     ui->content->setCurrentWidget(ui->usersPage);
+}
+
+
+void MainWindow::on_MainWindow_destroyed()
+{
+    db.commit();
 }
 

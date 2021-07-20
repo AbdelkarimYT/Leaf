@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     db.setPort(3306);
     db.setUserName("abdelkarim");
     db.setPassword("toor");
-    db.setDatabaseName("pypos");
+    db.setDatabaseName("leaf_db");
 
     if (db.open())
     {

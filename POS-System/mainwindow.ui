@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>616</width>
-    <height>373</height>
+    <height>408</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,32 +56,12 @@ QStatusBar {
       <widget class="OrdersForm" name="ordersPage"/>
       <widget class="ChashForm" name="chashPage"/>
       <widget class="SuppliersForm" name="suppliersPage"/>
-      <widget class="ProdectsForm" name="prodectsPage"/>
+      <widget class="productsForm" name="productsPage"/>
+      <widget class="InventoryForm" name="inventoryPage"/>
       <widget class="ClientsForm" name="clientsPage"/>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="title">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #33b864;
-padding-left: 24px;
-padding-right: 24px;
-color: #fff;
-font: 75 16pt &quot;MS Shell Dlg 2&quot;;
-</string>
-      </property>
-      <property name="text">
-       <string>Selling</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" rowspan="2">
+    <item row="1" column="0">
      <widget class="QWidget" name="nav" native="true">
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
@@ -111,6 +91,12 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;
           <iconset resource="res.qrc">
            <normaloff>:/Icons/res/sale.png</normaloff>:/Icons/res/sale.png</iconset>
          </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
@@ -129,39 +115,29 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="prodectsBtn">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="productsBtn">
          <property name="styleSheet">
           <string notr="true"/>
          </property>
          <property name="text">
-          <string>Prodects</string>
+          <string>Products</string>
          </property>
          <property name="icon">
           <iconset resource="res.qrc">
            <normaloff>:/Icons/res/invoice.png</normaloff>:/Icons/res/invoice.png</iconset>
          </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="clientsBtn">
-         <property name="text">
-          <string>Clients</string>
-         </property>
-         <property name="icon">
-          <iconset resource="res.qrc">
-           <normaloff>:/Icons/res/nv_customer.png</normaloff>:/Icons/res/nv_customer.png</iconset>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -173,70 +149,36 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;
           <bool>true</bool>
          </property>
          <property name="autoDefault">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="suppliersBtn">
+        <widget class="QPushButton" name="InventoryBrn">
          <property name="text">
-          <string>Suppliers</string>
+          <string>Inventory</string>
          </property>
-         <property name="icon">
-          <iconset resource="res.qrc">
-           <normaloff>:/Icons/res/delivery-man.png</normaloff>:/Icons/res/delivery-man.png</iconset>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
          </property>
          <property name="checkable">
           <bool>true</bool>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
          </property>
          <property name="autoExclusive">
           <bool>true</bool>
          </property>
          <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="cashBtn">
-         <property name="text">
-          <string>Cash</string>
-         </property>
-         <property name="icon">
-          <iconset resource="res.qrc">
-           <normaloff>:/Icons/res/money.png</normaloff>:/Icons/res/money.png</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="checked">
           <bool>false</bool>
          </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="ordersBtn">
-         <property name="text">
-          <string>Orders</string>
-         </property>
-         <property name="icon">
-          <iconset resource="res.qrc">
-           <normaloff>:/Icons/res/note.png</normaloff>:/Icons/res/note.png</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
@@ -249,11 +191,140 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;
           <iconset resource="res.qrc">
            <normaloff>:/Icons/res/user.png</normaloff>:/Icons/res/user.png</iconset>
          </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
          <property name="autoExclusive">
           <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="clientsBtn">
+         <property name="text">
+          <string>Clients</string>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/nv_customer.png</normaloff>:/Icons/res/nv_customer.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="suppliersBtn">
+         <property name="text">
+          <string>Suppliers</string>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/delivery-man.png</normaloff>:/Icons/res/delivery-man.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="ordersBtn">
+         <property name="text">
+          <string>Orders</string>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/note.png</normaloff>:/Icons/res/note.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="cashBtn">
+         <property name="text">
+          <string>Cash</string>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Icons/res/money.png</normaloff>:/Icons/res/money.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -271,6 +342,27 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;
         </spacer>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="title">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #33b864;
+padding-left: 24px;
+padding-right: 24px;
+color: #fff;
+font: 75 16pt &quot;MS Shell Dlg 2&quot;;
+</string>
+      </property>
+      <property name="text">
+       <string>Selling</string>
+      </property>
      </widget>
     </item>
    </layout>
@@ -396,9 +488,9 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ProdectsForm</class>
+   <class>productsForm</class>
    <extends>QWidget</extends>
-   <header location="global">prodectsform.h</header>
+   <header location="global">productsform.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -435,6 +527,12 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;
    <class>UsersForm</class>
    <extends>QWidget</extends>
    <header location="global">usersform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>InventoryForm</class>
+   <extends>QWidget</extends>
+   <header location="global">inventoryform.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

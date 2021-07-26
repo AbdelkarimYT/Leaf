@@ -5,12 +5,14 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QSqlTableModel>
+#include <QSqlRelationalTableModel>
+#include <QSqlRelation>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 
 
 extern QSqlDatabase   db;
-extern QSqlTableModel *prodects;
+extern QSqlRelationalTableModel *products;
 extern QSqlTableModel *suppliers;
 extern QSqlTableModel *customers;
 extern QSqlTableModel *cashIn;
@@ -19,5 +21,6 @@ extern QSqlTableModel *familys;
 extern QSqlTableModel *categorys;
 extern QSqlTableModel *orders;
 extern QSqlTableModel *users;
+extern QSqlRelationalTableModel *inventory;
 
 #endif // MODELS_H

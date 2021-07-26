@@ -29,7 +29,7 @@ void CustomerDialog::on_buttonBox_accepted()
         else
         {
             accept();
-            db.close();
+            customers->select();
             QMessageBox::information(this, "Success", "Clinte added successfully.");
         }
     }

@@ -22,7 +22,7 @@ private slots:
     void on_actionAddUser_triggered();
     void on_actionAddClient_triggered();
     void on_sellingBtn_clicked();
-    void on_prodectsBtn_clicked();
+    void on_productsBtn_clicked();
     void on_clientsBtn_clicked();
     void on_actionAddSupplier_triggered();
     void on_actionAddOrder_triggered();
@@ -30,8 +30,9 @@ private slots:
     void on_suppliersBtn_clicked();
     void on_ordersBtn_clicked();
     void on_usersBtn_clicked();
-
     void on_MainWindow_destroyed();
+
+    void on_InventoryBrn_clicked();
 
 private:
     Ui::MainWindow *ui;

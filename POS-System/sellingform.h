@@ -2,8 +2,10 @@
 #define SELLINGFORM_H
 
 #include <QWidget>
-#include <QStringList>
+#include <QCompleter>
 #include <QStandardItemModel>
+#include <QSortFilterProxyModel>
+#include <QSqlRelationalTableModel>
 
 namespace Ui { class SellingForm; }
 
@@ -15,8 +17,15 @@ public:
     explicit SellingForm(QWidget *parent = nullptr);
     ~SellingForm();
 
+private slots:
+    void on_addItemBtn_clicked();
+
+    void on_filter_textChanged(const QString &arg1);
+
 private:
-    Ui::SellingForm *ui;
+    Ui::SellingForm       *ui;
+    QStandardItemModel    *itemsModel;
+    QSortFilterProxyModel *sortModel;
 };
 
 #endif // SELLINGFORM_H

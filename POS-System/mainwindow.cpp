@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "prodectdialog.h"
+#include "productdialog.h"
 #include "familydialog.h"
 #include "categorydialog.h"
 #include "userdialog.h"
@@ -27,7 +27,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionAddProduct_triggered()
 {
-    ProdectDialog pd(this);
+    productDialog pd(this);
     pd.exec();
 }
 
@@ -67,10 +67,10 @@ void MainWindow::on_sellingBtn_clicked()
 }
 
 
-void MainWindow::on_prodectsBtn_clicked()
+void MainWindow::on_productsBtn_clicked()
 {
-    ui->title->setText("Prodects");
-    ui->content->setCurrentWidget(ui->prodectsPage);
+    ui->title->setText("products");
+    ui->content->setCurrentWidget(ui->productsPage);
 }
 
 
@@ -121,6 +121,11 @@ void MainWindow::on_usersBtn_clicked()
     ui->content->setCurrentWidget(ui->usersPage);
 }
 
+void MainWindow::on_InventoryBrn_clicked()
+{
+    ui->title->setText("Inventory");
+    ui->content->setCurrentWidget(ui->inventoryPage);
+}
 
 void MainWindow::on_MainWindow_destroyed()
 {

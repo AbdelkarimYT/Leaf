@@ -88,7 +88,7 @@
        <widget class="QTableWidget" name="orderItems">
         <column>
          <property name="text">
-          <string>Prodect Name</string>
+          <string>product Name</string>
          </property>
         </column>
         <column>

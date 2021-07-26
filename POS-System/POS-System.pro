@@ -14,13 +14,14 @@ SOURCES += \
     clientsform.cpp \
     customerdialog.cpp \
     familydialog.cpp \
+    inventoryform.cpp \
     logindialog.cpp \
     main.cpp \
     mainwindow.cpp \
     orderdialog.cpp \
     ordersform.cpp \
-    prodectdialog.cpp \
-    prodectsform.cpp \
+    productdialog.cpp \
+    productsform.cpp \
     sellingform.cpp \
     supplierdialog.cpp \
     suppliersform.cpp \
@@ -33,13 +34,14 @@ HEADERS += \
     clientsform.h \
     customerdialog.h \
     familydialog.h \
+    inventoryform.h \
     logindialog.h \
     mainwindow.h \
     models.h \
     orderdialog.h \
     ordersform.h \
-    prodectdialog.h \
-    prodectsform.h \
+    productdialog.h \
+    productsform.h \
     sellingform.h \
     supplierdialog.h \
     suppliersform.h \
@@ -52,12 +54,13 @@ FORMS += \
     clientsform.ui \
     customerdialog.ui \
     familydialog.ui \
+    inventoryform.ui \
     logindialog.ui \
     mainwindow.ui \
     orderdialog.ui \
     ordersform.ui \
-    prodectdialog.ui \
-    prodectsform.ui \
+    productdialog.ui \
+    productsform.ui \
     sellingform.ui \
     supplierdialog.ui \
     suppliersform.ui \

@@ -238,6 +238,9 @@
           <property name="maxVisibleItems">
            <number>24</number>
           </property>
+          <property name="duplicatesEnabled">
+           <bool>false</bool>
+          </property>
          </widget>
         </item>
         <item>

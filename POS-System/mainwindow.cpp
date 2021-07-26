@@ -69,7 +69,7 @@ void MainWindow::on_sellingBtn_clicked()
 
 void MainWindow::on_productsBtn_clicked()
 {
-    ui->title->setText("products");
+    ui->title->setText("Products");
     ui->content->setCurrentWidget(ui->productsPage);
 }
 

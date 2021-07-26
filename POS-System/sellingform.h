@@ -5,7 +5,6 @@
 #include <QCompleter>
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
-#include <QSqlRelationalTableModel>
 
 namespace Ui { class SellingForm; }
 

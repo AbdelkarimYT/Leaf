@@ -72,6 +72,16 @@ int main(int argc, char *argv[])
         products->setHeaderData(5, Qt::Horizontal, "Description");
         products->setHeaderData(6, Qt::Horizontal, "Created Date");
         products->setHeaderData(7, Qt::Horizontal, "Updated Date");
+        users->setHeaderData(0, Qt::Horizontal, "#");
+        users->setHeaderData(1, Qt::Horizontal, "Name");
+        users->setHeaderData(2, Qt::Horizontal, "Username");
+        users->setHeaderData(3, Qt::Horizontal, "Password");
+        users->setHeaderData(4, Qt::Horizontal, "Created Date");
+        users->setHeaderData(5, Qt::Horizontal, "Updated Date");
+        customers->setHeaderData(0, Qt::Horizontal, "#");
+        customers->setHeaderData(1, Qt::Horizontal, "Name");
+        customers->setHeaderData(2, Qt::Horizontal, "Created Date");
+        customers->setHeaderData(3, Qt::Horizontal, "Updated Date");
         familys->setHeaderData(0, Qt::Horizontal, "#");
         familys->setHeaderData(1, Qt::Horizontal, "Family Name");
         familys->setHeaderData(2, Qt::Horizontal, "Description");

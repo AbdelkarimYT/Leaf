@@ -27,7 +27,31 @@
     <number>9</number>
    </property>
    <item row="0" column="0">
-    <widget class="QTableView" name="customersTabel"/>
+    <widget class="QTabWidget" name="content">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="customersTab">
+      <attribute name="title">
+       <string>Clients</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTableView" name="customersTabel"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="customerPaymentsTab">
+      <attribute name="title">
+       <string>Client Payments</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QTableView" name="customerPaymentsTabel"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
    </item>
   </layout>
  </widget>

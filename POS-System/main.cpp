@@ -19,6 +19,7 @@ QSqlTableModel *categorys;
 QSqlTableModel *orders;
 QSqlTableModel *users;
 QSqlRelationalTableModel *inventory;
+QSqlRelationalTableModel *customerPayments;
 
 int main(int argc, char *argv[])
 {
@@ -26,16 +27,17 @@ int main(int argc, char *argv[])
     QSplashScreen splash(QPixmap(":/Backgrounds/res/splash.jpg"));
     LoginDialog   d(nullptr);
     MainWindow    w;
+    QSettings settings("settings.ini", QSettings::IniFormat);
 
     //a.setStyle("Fusion");
     splash.show();
 
-    db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setPort(3306);
-    db.setUserName("abdelkarim");
-    db.setPassword("toor");
-    db.setDatabaseName("leaf_db");
+    db = QSqlDatabase::addDatabase(settings.value("/DatabaseConfiguration/Driver").toString());
+    db.setHostName(settings.value("/DatabaseConfiguration/HostName").toString());
+    db.setPort(settings.value("/DatabaseConfiguration/Port").toInt());
+    db.setUserName(settings.value("/DatabaseConfiguration/Username").toString());
+    db.setPassword(settings.value("/DatabaseConfiguration/Password").toString());
+    db.setDatabaseName(settings.value("/DatabaseConfiguration/DatabaseName").toString());
 
     if (db.open())
     {
@@ -52,6 +54,7 @@ int main(int argc, char *argv[])
         categorys = new QSqlTableModel(nullptr, db);
         orders    = new QSqlTableModel(nullptr, db);
         inventory = new QSqlRelationalTableModel(products, db);
+        customerPayments = new QSqlRelationalTableModel(nullptr, db);
 
         products->setTable("products");
         users->setTable("users");
@@ -63,6 +66,7 @@ int main(int argc, char *argv[])
         categorys->setTable("categorys");
         orders->setTable("orders");
         inventory->setTable("inventory");
+        customerPayments->setTable("customer_payments");
 
         products->setHeaderData(0, Qt::Horizontal, "#");
         products->setHeaderData(1, Qt::Horizontal, "Family Name");
@@ -115,11 +119,21 @@ int main(int argc, char *argv[])
         suppliers->setHeaderData(4, Qt::Horizontal, "Address");
         suppliers->setHeaderData(5, Qt::Horizontal, "Created Date");
         suppliers->setHeaderData(6, Qt::Horizontal, "Update Date");
+        customerPayments->setHeaderData(0, Qt::Horizontal, "#");
+        customerPayments->setHeaderData(1, Qt::Horizontal, "User Name");
+        customerPayments->setHeaderData(2, Qt::Horizontal, "Client Name");
+        customerPayments->setHeaderData(3, Qt::Horizontal, "Invoice Number");
+        customerPayments->setHeaderData(4, Qt::Horizontal, "Paid Amount");
+        customerPayments->setHeaderData(5, Qt::Horizontal, "Change Amount");
+        customerPayments->setHeaderData(6, Qt::Horizontal, "Transaction Date");
 
         products->setRelation(1, QSqlRelation("familys", "id", "name"));
         products->setRelation(2, QSqlRelation("categorys", "id", "name"));
         inventory->setRelation(1, QSqlRelation("products", "id", "name"));
         cashIn->setRelation(1, QSqlRelation("users", "id", "name"));
+        customerPayments->setRelation(1, QSqlRelation("uses", "id", "name"));
+        customerPayments->setRelation(2, QSqlRelation("customers", "id", "name"));
+        customerPayments->setRelation(3, QSqlRelation("customer_bills", "id", "name"));
 
         products->select();
         users->select();
@@ -131,6 +145,7 @@ int main(int argc, char *argv[])
         cashOut->select();
         orders->select();
         inventory->select();
+        customerPayments->select();
 
         MainWindow w;
         w.showMaximized();

@@ -22,5 +22,6 @@ extern QSqlTableModel           *categorys;
 extern QSqlTableModel           *orders;
 extern QSqlTableModel           *users;
 extern QSqlRelationalTableModel *inventory;
+extern QSqlRelationalTableModel *customerPayments;
 
 #endif // MODELS_H

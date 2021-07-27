@@ -85,4 +85,5 @@ DISTFILES += \
     res/family-tree.png \
     res/trolley.png \
     res/update.png \
-    res/user.png
+    res/user.png \
+    settings.ini

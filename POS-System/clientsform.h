@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMessageBox>
+#include <QSqlRelationalDelegate>
 
 namespace Ui { class ClientsForm; }
 
@@ -16,6 +17,7 @@ public:
 
 private:
     Ui::ClientsForm *ui;
+    QSqlRelationalDelegate *customerPaymentsDelegate;
 };
 
 #endif // CLIENTSFORM_H

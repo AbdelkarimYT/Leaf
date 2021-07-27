@@ -9,8 +9,8 @@ productsForm::productsForm(QWidget *parent) :
     ui->setupUi(this);
 
     productRelationalDelegate = new QSqlRelationalDelegate(nullptr);
-
     familyFilterModel = new QSortFilterProxyModel();
+
     familyFilterModel->setSourceModel(familys);
     familyFilterModel->setFilterCaseSensitivity(Qt::CaseSensitive);
     familyFilterModel->setFilterKeyColumn(-1);
@@ -24,6 +24,8 @@ productsForm::productsForm(QWidget *parent) :
 productsForm::~productsForm()
 {
     delete ui;
+    delete productRelationalDelegate;
+    delete familyFilterModel;
 }
 
 

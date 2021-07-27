@@ -7,11 +7,16 @@ ChashForm::ChashForm(QWidget *parent) :
     ui(new Ui::ChashForm)
 {
     ui->setupUi(this);
+
+    cashInRelationalDelegate = new QSqlRelationalDelegate();
+
     ui->chashInTabel->setModel(cashIn);
     ui->chashOutTabel->setModel(cashOut);
+    ui->chashInTabel->setItemDelegate(cashInRelationalDelegate);
 }
 
 ChashForm::~ChashForm()
 {
     delete ui;
+    delete cashInRelationalDelegate;
 }

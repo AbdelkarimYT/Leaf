@@ -12,7 +12,7 @@ QSqlDatabase   db;
 QSqlRelationalTableModel *products;
 QSqlTableModel *customers;
 QSqlTableModel *suppliers;
-QSqlTableModel *cashIn;
+QSqlRelationalTableModel *cashIn;
 QSqlTableModel *cashOut;
 QSqlTableModel *familys;
 QSqlTableModel *categorys;
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
         users     = new QSqlTableModel(nullptr, db);
         customers = new QSqlTableModel(nullptr, db);
         suppliers = new QSqlTableModel(nullptr, db);
-        cashIn    = new QSqlTableModel(nullptr, db);
+        cashIn    = new QSqlRelationalTableModel(nullptr, db);
         cashOut   = new QSqlTableModel(nullptr, db);
         familys   = new QSqlTableModel(nullptr, db);
         categorys = new QSqlTableModel(nullptr, db);
@@ -98,10 +98,28 @@ int main(int argc, char *argv[])
         inventory->setHeaderData(3, Qt::Horizontal, "Quantity");
         inventory->setHeaderData(4, Qt::Horizontal, "Cost Price");
         inventory->setHeaderData(5, Qt::Horizontal, "Expiration Date");
+        cashIn->setHeaderData(0, Qt::Horizontal, "#");
+        cashIn->setHeaderData(1, Qt::Horizontal, "User Name");
+        cashIn->setHeaderData(2, Qt::Horizontal, "Amount");
+        cashIn->setHeaderData(3, Qt::Horizontal, "Transaction Date");
+        cashIn->setHeaderData(4, Qt::Horizontal, "Description");
+        cashOut->setHeaderData(0, Qt::Horizontal, "#");
+        cashOut->setHeaderData(1, Qt::Horizontal, "User Name");
+        cashOut->setHeaderData(2, Qt::Horizontal, "Amount");
+        cashOut->setHeaderData(3, Qt::Horizontal, "Transaction Date");
+        cashOut->setHeaderData(4, Qt::Horizontal, "Description");
+        suppliers->setHeaderData(0, Qt::Horizontal, "#");
+        suppliers->setHeaderData(1, Qt::Horizontal, "Supplier Name");
+        suppliers->setHeaderData(2, Qt::Horizontal, "Email");
+        suppliers->setHeaderData(3, Qt::Horizontal, "Phone Number");
+        suppliers->setHeaderData(4, Qt::Horizontal, "Address");
+        suppliers->setHeaderData(5, Qt::Horizontal, "Created Date");
+        suppliers->setHeaderData(6, Qt::Horizontal, "Update Date");
 
         products->setRelation(1, QSqlRelation("familys", "id", "name"));
         products->setRelation(2, QSqlRelation("categorys", "id", "name"));
         inventory->setRelation(1, QSqlRelation("products", "id", "name"));
+        cashIn->setRelation(1, QSqlRelation("users", "id", "name"));
 
         products->select();
         users->select();

@@ -29,6 +29,8 @@ SellingForm::SellingForm(QWidget *parent) :
 SellingForm::~SellingForm()
 {
     delete ui;
+    delete itemsModel;
+    delete sortModel;
 }
 
 void SellingForm::on_addItemBtn_clicked()

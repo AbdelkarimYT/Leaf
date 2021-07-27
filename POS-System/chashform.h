@@ -2,6 +2,7 @@
 #define CHASHFORM_H
 
 #include <QWidget>
+#include <QSqlRelationalDelegate>
 
 namespace Ui { class ChashForm; }
 
@@ -15,6 +16,8 @@ public:
 
 private:
     Ui::ChashForm *ui;
+    QSqlRelationalDelegate *cashInRelationalDelegate;
+    QSqlRelationalDelegate *cashOutRelationalDelegate;
 };
 
 #endif // CHASHFORM_H

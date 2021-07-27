@@ -17,11 +17,6 @@ InventoryForm::InventoryForm(QWidget *parent) :
 InventoryForm::~InventoryForm()
 {
     delete ui;
-}
-
-
-void InventoryForm::on_pushButton_clicked()
-{
-    inventory->select();
+    delete inventoryRelationalDelegate;
 }
 

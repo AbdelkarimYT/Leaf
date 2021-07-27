@@ -16,9 +16,6 @@ public:
     explicit InventoryForm(QWidget *parent = nullptr);
     ~InventoryForm();
 
-private slots:
-    void on_pushButton_clicked();
-
 private:
     Ui::InventoryForm *ui;
     QSqlRelationalDelegate *inventoryRelationalDelegate;

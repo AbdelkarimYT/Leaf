@@ -84,7 +84,11 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QTableView" name="productsTabel"/>
+        <widget class="QTableView" name="productsTabel">
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -138,7 +142,11 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QTableView" name="familysTable"/>
+        <widget class="QTableView" name="familysTable">
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -148,7 +156,11 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_5">
        <item row="1" column="0">
-        <widget class="QTableView" name="categorysTable"/>
+        <widget class="QTableView" name="categorysTable">
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
        <item row="0" column="0">
         <widget class="QWidget" name="widget" native="true">

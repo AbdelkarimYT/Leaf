@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>612</width>
+    <height>370</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,11 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="QTableView" name="inventoryTable"/>
+    <widget class="QTableView" name="inventoryTable">
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

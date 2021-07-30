@@ -156,6 +156,9 @@
       </item>
       <item>
        <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -320,6 +323,9 @@
       </item>
       <item>
        <widget class="QTableView" name="itemsTabel">
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
         <property name="selectionMode">
          <enum>QAbstractItemView::ExtendedSelection</enum>
         </property>
@@ -387,19 +393,38 @@
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="total_num">
+         <widget class="QDoubleSpinBox" name="total">
           <property name="font">
            <font>
             <pointsize>16</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
            </font>
           </property>
-          <property name="text">
-           <string>0.00</string>
+          <property name="wrapping">
+           <bool>false</bool>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::NoButtons</enum>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="suffix">
+           <string> DZD</string>
+          </property>
+          <property name="maximum">
+           <double>10000000000000000.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.500000000000000</double>
           </property>
          </widget>
         </item>

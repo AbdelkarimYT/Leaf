@@ -10,6 +10,14 @@ SellingForm::SellingForm(QWidget *parent) :
 
     itemsModel = new QStandardItemModel();
     sortModel  = new QSortFilterProxyModel();
+    sqlitemsModel = new QSqlQueryModel();
+
+    sqlitemsModel->setQuery("SELECT products.id, name, price, sum(quantity) as quantity, min(expiration_date) as min_expiration_date,  max(expiration_date) as max_expiration_date \
+        FROM products, inventory \
+        WHERE products.id = inventory.product_id \
+        AND NOW() < expiration_date \
+        GROUP BY product_id");
+    sqlitemsModel->query().exec();
 
     sortModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     sortModel->setFilterKeyColumn(-1);
@@ -22,7 +30,7 @@ SellingForm::SellingForm(QWidget *parent) :
     ui->clientName->setModel(customers);
     ui->clientName->setModelColumn(1);
 
-    ui->product->setModel(inventory);
+    ui->product->setModel(sqlitemsModel);
     ui->product->setModelColumn(1);
 }
 
@@ -31,21 +39,26 @@ SellingForm::~SellingForm()
     delete ui;
     delete itemsModel;
     delete sortModel;
+    delete sqlitemsModel;
 }
 
 void SellingForm::on_addItemBtn_clicked()
 {
-    //ui->product->currentData().;
+    int index = ui->product->currentIndex();
+    //int id = sqlitemsModel->index(index, 0).data().toInt();
+    QString name = sqlitemsModel->index(index, 1).data().toString();
+    double price = sqlitemsModel->index(index, 2).data().toDouble();
+    int qty = ui->quantity->value();
+    double total = price * qty;
+    //QString exd = sqlitemsModel->index(index, 2).data().toDouble();
+
     QList<QStandardItem*> item;
-    QString name = ui->product->currentText();
-    QString qty = QString::number(ui->quantity->value());
-    QString uprice = "";
-    QString total = "";
     item.append(new QStandardItem(name));
-    item.append(new QStandardItem(qty));
-    item.append(new QStandardItem("3"));
-    item.append(new QStandardItem("4"));
+    item.append(new QStandardItem(QString::number(qty)));
+    item.append(new QStandardItem(QString::number(price)));
+    item.append(new QStandardItem(QString::number(total)));
     itemsModel->appendRow(item);
+    ui->total->setValue(ui->total->value() + total);
 }
 
 void SellingForm::on_filter_textChanged(const QString &arg1)

@@ -83,7 +83,11 @@
         </layout>
        </item>
        <item row="1" column="0">
-        <widget class="QTableView" name="chashInTabel"/>
+        <widget class="QTableView" name="chashInTabel">
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
        <item row="2" column="0">
         <widget class="QGroupBox" name="groupBox">
@@ -213,7 +217,11 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="1" column="0">
-        <widget class="QTableView" name="chashOutTabel"/>
+        <widget class="QTableView" name="chashOutTabel">
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
        <item row="0" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout_2">

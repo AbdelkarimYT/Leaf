@@ -5,6 +5,7 @@
 #include <QCompleter>
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
+#include <QSqlQueryModel>
 
 namespace Ui { class SellingForm; }
 
@@ -25,6 +26,7 @@ private:
     Ui::SellingForm       *ui;
     QStandardItemModel    *itemsModel;
     QSortFilterProxyModel *sortModel;
+    QSqlQueryModel        *sqlitemsModel;
 };
 
 #endif // SELLINGFORM_H

@@ -25,12 +25,17 @@ int main(int argc, char *argv[])
 {
     QApplication  a(argc, argv);
     QSplashScreen splash(QPixmap(":/Backgrounds/res/splash.jpg"));
-    LoginDialog   d(nullptr);
-    MainWindow    w;
-    QSettings settings("settings.ini", QSettings::IniFormat);
 
-    //a.setStyle("Fusion");
+    splash.setWindowFlags(Qt::WindowStaysOnTopHint | Qt::SplashScreen);
+    splash.showMessage("Launching...", Qt::AlignBottom, Qt::white);
     splash.show();
+    //a.setStyle("Fusion");
+
+    LoginDialog d(&splash);
+    MainWindow  w;
+    QSettings   settings("settings.ini", QSettings::IniFormat);
+
+    splash.showMessage("Connecting to database...", Qt::BottomLeftCorner, Qt::white);
 
     db = QSqlDatabase::addDatabase(settings.value("/DatabaseConfiguration/Driver").toString());
     db.setHostName(settings.value("/DatabaseConfiguration/HostName").toString());
@@ -41,8 +46,9 @@ int main(int argc, char *argv[])
 
     if (db.open())
     {
-        if (!d.exec())
-            return 0;
+        splash.showMessage("Login...", Qt::AlignBottom, Qt::white);
+        if (!d.exec()) return 0;
+        splash.showMessage("Loading data from database...", Qt::AlignBottom, Qt::white);
 
         products  = new QSqlRelationalTableModel(nullptr, db);
         users     = new QSqlTableModel(nullptr, db);
@@ -146,6 +152,8 @@ int main(int argc, char *argv[])
         orders->select();
         inventory->select();
         customerPayments->select();
+
+        splash.showMessage("Starting...", Qt::AlignBottom, Qt::white);
 
         MainWindow w;
         w.showMaximized();

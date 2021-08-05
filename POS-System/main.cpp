@@ -47,7 +47,9 @@ int main(int argc, char *argv[])
     if (db.open())
     {
         splash.showMessage("Login...", Qt::AlignBottom, Qt::white);
+
         if (!d.exec()) return 0;
+
         splash.showMessage("Loading data from database...", Qt::AlignBottom, Qt::white);
 
         products  = new QSqlRelationalTableModel(nullptr, db);

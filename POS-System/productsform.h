@@ -16,7 +16,7 @@ public:
     ~productsForm();
 
 private slots:
-    void on_familySearch_textChanged(const QString &arg1);
+    void on_familySearch_textChanged(const QString &filterString);
 
 private:
     Ui::productsForm *ui;

@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     MainWindow  w;
     QSettings   settings("settings.ini", QSettings::IniFormat);
 
-    splash.showMessage("Connecting to database...", Qt::BottomLeftCorner, Qt::white);
+    splash.showMessage("Connecting to database...", Qt::AlignBottom, Qt::white);
 
     db = QSqlDatabase::addDatabase(settings.value("/DatabaseConfiguration/Driver").toString());
     db.setHostName(settings.value("/DatabaseConfiguration/HostName").toString());
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 
     if (db.open())
     {
-        splash.showMessage("Login...", Qt::AlignBottom, Qt::white);
+        splash.showMessage(nullptr, Qt::AlignBottom, Qt::white);
 
         if (!d.exec()) return 0;
 
@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-        QMessageBox::critical(nullptr, "ERROR", db.lastError().text());
+        QMessageBox::critical(&splash, "ERROR", db.lastError().text());
         a.exit();
     }
 }

@@ -21,6 +21,7 @@ QSqlTableModel *users;
 QSqlRelationalTableModel *inventory;
 QSqlRelationalTableModel *customerPayments;
 
+
 int main(int argc, char *argv[])
 {
     QApplication  a(argc, argv);
@@ -154,6 +155,18 @@ int main(int argc, char *argv[])
         orders->select();
         inventory->select();
         customerPayments->select();
+
+        products->sort(0, Qt::AscendingOrder);
+        users->sort(0, Qt::AscendingOrder);
+        customers->sort(0, Qt::AscendingOrder);
+        suppliers->sort(0, Qt::AscendingOrder);
+        familys->sort(0, Qt::AscendingOrder);
+        categorys->sort(0, Qt::AscendingOrder);
+        cashIn->sort(0, Qt::AscendingOrder);
+        cashOut->sort(0, Qt::AscendingOrder);
+        orders->sort(0, Qt::AscendingOrder);
+        inventory->sort(0, Qt::AscendingOrder);
+        customerPayments->sort(0, Qt::AscendingOrder);
 
         splash.showMessage("Starting...", Qt::AlignBottom, Qt::white);
 

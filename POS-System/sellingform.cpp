@@ -8,7 +8,7 @@ SellingForm::SellingForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    itemsModel    = new QSqlRelationalTableModel(nullptr, db);
+    itemsModel    = new QSqlRelationalTableModel(ui->itemsTabel, db);
     itemsDelegate = new QSqlRelationalDelegate();
     sortModel     = new QSortFilterProxyModel();
     sqlitemsModel = new QSqlQueryModel();
@@ -20,6 +20,7 @@ SellingForm::SellingForm(QWidget *parent) :
     itemsModel->setHeaderData(2, Qt::Horizontal, "Quantity");
     itemsModel->setHeaderData(3, Qt::Horizontal, "Unit Price");
     itemsModel->setHeaderData(4, Qt::Horizontal, "Total");
+    itemsModel->setEditStrategy(QSqlTableModel::OnRowChange);
     itemsModel->select();
 
     sqlitemsModel->setQuery(" \

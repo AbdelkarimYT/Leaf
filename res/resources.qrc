@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icnos/add.png</file>
+        <file>icnos/app.jpg</file>
+        <file>icnos/barcode.png</file>
+        <file>icnos/basket.png</file>
+        <file>icnos/category.png</file>
+        <file>icnos/customer.png</file>
+        <file>icnos/delete.png</file>
+        <file>icnos/delivery-man.png</file>
+        <file>icnos/down-arrow.png</file>
+        <file>icnos/family-tree.png</file>
+        <file>icnos/invoice.png</file>
+        <file>icnos/money.png</file>
+        <file>icnos/note.png</file>
+        <file>icnos/nv_customer.png</file>
+        <file>icnos/sale.png</file>
+        <file>icnos/splash.jpg</file>
+        <file>icnos/trolley.png</file>
+        <file>icnos/up-arrow.png</file>
+        <file>icnos/update.png</file>
+        <file>icnos/user.png</file>
+    </qresource>
+</RCC>

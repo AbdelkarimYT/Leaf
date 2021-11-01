@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Leaf</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/resources.qrc">
+    <normaloff>:/icnos/app.jpg</normaloff>:/icnos/app.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QStackedWidget" name="content">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="CashForm" name="cashPage"/>
+      <widget class="UsersForm" name="usersPage"/>
+      <widget class="CustomersForm" name="customersPage"/>
+      <widget class="HomeForm" name="homePage"/>
+      <widget class="InventoryForm" name="inventoryPage"/>
+      <widget class="SuppliesForm" name="suppliesPage"/>
+      <widget class="CustomerPaymentsForm" name="customerPaymentsPage"/>
+      <widget class="ProductsForm" name="productsPage"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionHome"/>
+    <addaction name="separator"/>
+    <addaction name="actionUsers"/>
+    <addaction name="separator"/>
+    <addaction name="actionProducts"/>
+    <addaction name="actionFamilys"/>
+    <addaction name="actionCategorys"/>
+    <addaction name="separator"/>
+    <addaction name="actionCustomers"/>
+    <addaction name="actionCustomer_Payments"/>
+    <addaction name="separator"/>
+    <addaction name="actionCash"/>
+    <addaction name="separator"/>
+    <addaction name="actionSupplie"/>
+    <addaction name="separator"/>
+    <addaction name="actionInventory"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionCash">
+   <property name="text">
+    <string>Cash</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionUsers">
+   <property name="text">
+    <string>Users</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionProducts">
+   <property name="text">
+    <string>Products</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionFamilys">
+   <property name="text">
+    <string>Familys</string>
+   </property>
+  </action>
+  <action name="actionCategorys">
+   <property name="text">
+    <string>Categorys</string>
+   </property>
+  </action>
+  <action name="actionCustomers">
+   <property name="text">
+    <string>Customers</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionCustomer_Payments">
+   <property name="text">
+    <string>Customer Payments</string>
+   </property>
+  </action>
+  <action name="actionSupplie">
+   <property name="text">
+    <string>Supplie</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionInventory">
+   <property name="text">
+    <string>Inventory</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionHome">
+   <property name="text">
+    <string>Home</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CashForm</class>
+   <extends>QWidget</extends>
+   <header>cashform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>UsersForm</class>
+   <extends>QWidget</extends>
+   <header>usersform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ProductsForm</class>
+   <extends>QWidget</extends>
+   <header>productsform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CustomersForm</class>
+   <extends>QWidget</extends>
+   <header>customersform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CustomerPaymentsForm</class>
+   <extends>QWidget</extends>
+   <header>customerpaymentsform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SuppliesForm</class>
+   <extends>QWidget</extends>
+   <header>suppliesform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>InventoryForm</class>
+   <extends>QWidget</extends>
+   <header>inventoryform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HomeForm</class>
+   <extends>QWidget</extends>
+   <header>homeform.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../res/resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

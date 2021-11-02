@@ -4,6 +4,10 @@
 #include <QSqlTableModel>
 #include <QSqlRelationalTableModel>
 #include <QSqlRelation>
+#include <QSqlQuery>
+#include <QSqlIndex>
+#include <QSortFilterProxyModel>
+#include <QModelIndex>
 
 namespace Models
 {
@@ -74,6 +78,23 @@ public:
 
 };
 
+
+class SupplierPaymentModel : public QSqlRelationalTableModel
+{
+    Q_OBJECT
+
+public:
+    inline static const QString Table = "supplier_payments";
+
+    enum Columns { id, user_id, supplier_id, supplier_bill_id, paid_amount, change_amount, date };
+
+public:
+    explicit SupplierPaymentModel(QObject *parent = nullptr, QSqlDatabase db = QSqlDatabase());
+    ~SupplierPaymentModel();
+
+};
+
+
 class ProductModel : public QSqlRelationalTableModel
 {
     Q_OBJECT
@@ -81,7 +102,7 @@ class ProductModel : public QSqlRelationalTableModel
 public:
     inline static const QString Table = "products";
 
-    enum Columns { id, category_id, name, price, description, created_at, updated_at };
+    enum Columns { id, category_id, name, price, stock, description, };
 
 public:
     explicit ProductModel(QObject *parent = nullptr, QSqlDatabase db = QSqlDatabase());

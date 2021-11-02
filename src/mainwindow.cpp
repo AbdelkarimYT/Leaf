@@ -46,13 +46,7 @@ void MainWindow::on_actionCustomers_triggered()
 }
 
 
-void MainWindow::on_actionCustomer_Payments_triggered()
-{
-    ui->content->setCurrentWidget(ui->customerPaymentsPage);
-}
-
-
-void MainWindow::on_actionSupplie_triggered()
+void MainWindow::on_actionSupplier_triggered()
 {
     ui->content->setCurrentWidget(ui->suppliesPage);
 }
@@ -67,5 +61,17 @@ void MainWindow::on_actionInventory_triggered()
 void MainWindow::on_actionHome_triggered()
 {
     ui->content->setCurrentWidget(ui->homePage);
+}
+
+
+void MainWindow::on_actionSupplierPayments_triggered()
+{
+    ui->content->setCurrentWidget(ui->supplierPaymentsPage);
+}
+
+
+void MainWindow::on_actionCustomerPayments_triggered()
+{
+    ui->content->setCurrentWidget(ui->customerPaymentsPage);
 }
 

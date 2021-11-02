@@ -18,10 +18,21 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="placeholderText">
+      <string>Search</string>
+     </property>
+    </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QTableView" name="productsTableView"/>
+    <widget class="QTableView" name="productsTableView">
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>30</number>
+     </attribute>
+    </widget>
    </item>
   </layout>
  </widget>

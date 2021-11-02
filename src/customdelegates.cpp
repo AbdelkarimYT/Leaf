@@ -51,14 +51,14 @@ QDateTimeEditDelegate::~QDateTimeEditDelegate()
 QWidget *QDateTimeEditDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QDateTimeEdit *editor = new QDateTimeEdit(parent);
-    editor->setDisplayFormat("yyyy/MM/dd hh:mm:ss AP");
+    editor->setDisplayFormat("yyyy/MM/dd HH:mm:ss");
     editor->setCalendarPopup(true);
     return editor;
 }
 
 void QDateTimeEditDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
 {
-    QDateTime value = QDateTime::fromString(index.model()->data(index, Qt::EditRole).toString(), "yyyy/MM/dd hh:mm:ss AP");
+    QDateTime value = QDateTime::fromString(index.model()->data(index, Qt::EditRole).toString(), "yyyy/MM/dd HH:mm:ss");
     QDateTimeEdit *widget = static_cast<QDateTimeEdit *>(editor);
     widget->setDateTime(value);
 }
@@ -67,7 +67,7 @@ void QDateTimeEditDelegate::setModelData(QWidget *editor, QAbstractItemModel *mo
 {
     QDateTimeEdit *widget = static_cast<QDateTimeEdit*>(editor);
     widget->interpretText();
-    QString value = widget->dateTime().toString("yyyy/MM/dd hh:mm:ss AP");
+    QString value = widget->dateTime().toString("yyyy/MM/dd HH:mm:ss");
     model->setData(index, value, Qt::EditRole);
 }
 

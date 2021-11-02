@@ -10,7 +10,10 @@ QSqlDatabase db;
 UserModel *users;
 CustomerModel *customers;
 CustomerPaymentstModel *customerPayments;
+
 SupplierModel *suppliers;
+SupplierPaymentModel *supplierPayments;
+
 ProductModel *products;
 InventoryModel *inventory;
 FamilyModel *familys;
@@ -35,6 +38,7 @@ int main(int argc, char *argv[])
     customers = new CustomerModel(nullptr, db);
     customerPayments = new CustomerPaymentstModel(nullptr, db);
     suppliers = new SupplierModel(nullptr, db);
+    supplierPayments = new SupplierPaymentModel(nullptr, db);
     products = new ProductModel(nullptr, db);
     inventory = new InventoryModel(nullptr, db);
     familys= new FamilyModel(nullptr, db);
@@ -45,6 +49,7 @@ int main(int argc, char *argv[])
     customers->select();
     customerPayments->select();
     suppliers->select();
+    supplierPayments->select();
     products->select();
     inventory->select();
     familys->select();

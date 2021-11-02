@@ -17,7 +17,7 @@
    <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+   <item row="1" column="0">
     <widget class="QTableView" name="usersTableView">
      <property name="alternatingRowColors">
       <bool>true</bool>
@@ -31,6 +31,16 @@
      <attribute name="verticalHeaderMinimumSectionSize">
       <number>30</number>
      </attribute>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLineEdit" name="searchEdit">
+     <property name="placeholderText">
+      <string>Search</string>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
   </layout>

@@ -33,6 +33,7 @@
       <widget class="CashForm" name="cashPage"/>
       <widget class="UsersForm" name="usersPage"/>
       <widget class="CustomersForm" name="customersPage"/>
+      <widget class="SupplierPaymentsForm" name="supplierPaymentsPage"/>
       <widget class="HomeForm" name="homePage"/>
       <widget class="InventoryForm" name="inventoryPage"/>
       <widget class="SuppliesForm" name="suppliesPage"/>
@@ -61,27 +62,33 @@
     <property name="title">
      <string>Help</string>
     </property>
+    <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
      <string>View</string>
     </property>
+    <widget class="QMenu" name="menuPayments">
+     <property name="title">
+      <string>Payments</string>
+     </property>
+     <addaction name="actionSupplierPayments"/>
+     <addaction name="actionCustomerPayments"/>
+    </widget>
     <addaction name="actionHome"/>
     <addaction name="separator"/>
     <addaction name="actionUsers"/>
+    <addaction name="actionSupplier"/>
+    <addaction name="actionCustomers"/>
     <addaction name="separator"/>
     <addaction name="actionProducts"/>
+    <addaction name="actionInventory"/>
     <addaction name="actionFamilys"/>
     <addaction name="actionCategorys"/>
     <addaction name="separator"/>
-    <addaction name="actionCustomers"/>
-    <addaction name="actionCustomer_Payments"/>
-    <addaction name="separator"/>
     <addaction name="actionCash"/>
     <addaction name="separator"/>
-    <addaction name="actionSupplie"/>
-    <addaction name="separator"/>
-    <addaction name="actionInventory"/>
+    <addaction name="menuPayments"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -138,14 +145,14 @@
     <string>Ctrl+C</string>
    </property>
   </action>
-  <action name="actionCustomer_Payments">
+  <action name="actionCustomerPayments">
    <property name="text">
-    <string>Customer Payments</string>
+    <string>Customers</string>
    </property>
   </action>
-  <action name="actionSupplie">
+  <action name="actionSupplier">
    <property name="text">
-    <string>Supplie</string>
+    <string>Supplier</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -165,6 +172,16 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionSupplierPayments">
+   <property name="text">
+    <string>Suppliers</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>
@@ -215,6 +232,12 @@
    <class>HomeForm</class>
    <extends>QWidget</extends>
    <header>homeform.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SupplierPaymentsForm</class>
+   <extends>QWidget</extends>
+   <header>supplierpaymentsform.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -100,15 +100,36 @@ ProductModel::ProductModel(QObject *parent, QSqlDatabase db) : QSqlRelationalTab
     this->setHeaderData(Columns::id, Qt::Horizontal, "#");
     this->setHeaderData(Columns::category_id, Qt::Horizontal, tr("Category"));
     this->setHeaderData(Columns::name, Qt::Horizontal, tr("Name"));
-    this->setHeaderData(Columns::price, Qt::Horizontal, tr("Price At"));
+    this->setHeaderData(Columns::price, Qt::Horizontal, tr("Price"));
+    this->setHeaderData(Columns::stock, Qt::Horizontal, tr("Stock"));
     this->setHeaderData(Columns::description, Qt::Horizontal, tr("Description"));
-    this->setHeaderData(Columns::created_at, Qt::Horizontal, tr("Created At"));
-    this->setHeaderData(Columns::updated_at, Qt::Horizontal, tr("Updated At"));
 
     this->setRelation(Columns::category_id, QSqlRelation(CategoryModel::Table, "id", "name"));
 }
 
 ProductModel::~ProductModel()
+{
+}
+
+
+SupplierPaymentModel::SupplierPaymentModel(QObject *parent, QSqlDatabase db) : QSqlRelationalTableModel(parent, db)
+{
+    this->setTable(Table);
+
+    this->setHeaderData(Columns::id, Qt::Horizontal, "#");
+    this->setHeaderData(Columns::user_id, Qt::Horizontal, tr("User"));
+    this->setHeaderData(Columns::supplier_id, Qt::Horizontal, tr("Supplier"));
+    this->setHeaderData(Columns::supplier_bill_id, Qt::Horizontal, tr("Bill Number"));
+    this->setHeaderData(Columns::paid_amount, Qt::Horizontal, tr("Paid Amount"));
+    this->setHeaderData(Columns::change_amount, Qt::Horizontal, tr("Change Amount"));
+    this->setHeaderData(Columns::date, Qt::Horizontal, tr("Date"));
+
+    this->setRelation(Columns::user_id, QSqlRelation(UserModel::Table, "id", "name"));
+    this->setRelation(Columns::supplier_id, QSqlRelation(SupplierModel::Table, "id", "name"));
+    //this->setRelation(Columns::supplier_bill_id, QSqlRelation(CategoryModel::Table, "id", "name"));
+}
+
+SupplierPaymentModel::~SupplierPaymentModel()
 {
 }
 

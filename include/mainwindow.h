@@ -30,13 +30,15 @@ private slots:
 
     void on_actionCustomers_triggered();
 
-    void on_actionCustomer_Payments_triggered();
-
-    void on_actionSupplie_triggered();
-
     void on_actionInventory_triggered();
 
     void on_actionHome_triggered();
+
+    void on_actionSupplier_triggered();
+
+    void on_actionSupplierPayments_triggered();
+
+    void on_actionCustomerPayments_triggered();
 
 private:
     Ui::MainWindow *ui;

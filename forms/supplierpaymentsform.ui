@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CustomerPaymentsForm</class>
- <widget class="QWidget" name="CustomerPaymentsForm">
+ <class>SupplierPaymentsForm</class>
+ <widget class="QWidget" name="SupplierPaymentsForm">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,9 +14,6 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
-    <widget class="QTableView" name="customerPaymentsTableView"/>
-   </item>
    <item row="0" column="0">
     <widget class="QLineEdit" name="lineEdit">
      <property name="placeholderText">
@@ -26,6 +23,9 @@
       <bool>true</bool>
      </property>
     </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QTableView" name="supplierPaymentsTableView"/>
    </item>
   </layout>
  </widget>

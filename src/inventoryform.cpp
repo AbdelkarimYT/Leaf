@@ -1,7 +1,7 @@
 #include "inventoryform.h"
 #include "ui_inventoryform.h"
 
-extern InventoryModel *inventory;
+extern Inventory *inventory;
 
 InventoryForm::InventoryForm(QWidget *parent) : QWidget(parent), ui(new Ui::InventoryForm)
 {

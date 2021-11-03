@@ -1,21 +1,19 @@
 #ifndef USERDIALOG_H
 #define USERDIALOG_H
 
-#include "custommodels.h"
 #include "customdelegates.h"
 
 #include <QDialog>
+#include <QModelIndex>
 
-namespace Ui {
-class UserDialog;
-}
+namespace Ui { class UserDialog; }
 
 class UserDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit UserDialog(QWidget *parent = nullptr, QModelIndex &model = nullptr, int arole = Qt::DisplayRole);
+    explicit UserDialog(QWidget *parent = nullptr, QModelIndex *model = nullptr, int arole = Qt::DisplayRole);
     ~UserDialog();
 
 private:

@@ -1,10 +1,10 @@
 #ifndef CASHFORM_H
 #define CASHFORM_H
 
-#include "custommodels.h"
 #include "customdelegates.h"
 
 #include <QWidget>
+#include <Cash>
 
 namespace Ui { class CashForm; }
 

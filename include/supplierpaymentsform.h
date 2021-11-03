@@ -1,10 +1,10 @@
 #ifndef SUPPLIERPAYMENTSFORM_H
 #define SUPPLIERPAYMENTSFORM_H
 
-#include "custommodels.h"
 #include "customdelegates.h"
 
 #include <QWidget>
+#include <SupplierPayment>
 
 namespace Ui {
 class SupplierPaymentsForm;

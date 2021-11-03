@@ -1,14 +1,12 @@
 #ifndef PRODUCTSFORM_H
 #define PRODUCTSFORM_H
 
-#include "custommodels.h"
 #include "customdelegates.h"
 
 #include <QWidget>
+#include <Product>
 
-namespace Ui {
-class ProductsForm;
-}
+namespace Ui { class ProductsForm; }
 
 class ProductsForm : public QWidget
 {

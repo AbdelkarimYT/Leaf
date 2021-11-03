@@ -1,14 +1,12 @@
 #ifndef CUSTOMERPAYMENTSFORM_H
 #define CUSTOMERPAYMENTSFORM_H
 
-#include "custommodels.h"
 #include "customdelegates.h"
 
 #include <QWidget>
+#include <CustomerPayment>
 
-namespace Ui {
-class CustomerPaymentsForm;
-}
+namespace Ui { class CustomerPaymentsForm; }
 
 class CustomerPaymentsForm : public QWidget
 {

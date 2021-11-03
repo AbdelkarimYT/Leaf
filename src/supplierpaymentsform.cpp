@@ -1,7 +1,7 @@
 #include "supplierpaymentsform.h"
 #include "ui_supplierpaymentsform.h"
 
-extern SupplierPaymentModel *supplierPayments;
+extern SupplierPayment *supplierPayments;
 
 SupplierPaymentsForm::SupplierPaymentsForm(QWidget *parent) : QWidget(parent), ui(new Ui::SupplierPaymentsForm)
 {

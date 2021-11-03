@@ -1,7 +1,7 @@
 #include "suppliesform.h"
 #include "ui_suppliesform.h"
 
-extern SupplierModel *suppliers;
+extern Supplier *suppliers;
 
 SuppliesForm::SuppliesForm(QWidget *parent) : QWidget(parent), ui(new Ui::SuppliesForm)
 {

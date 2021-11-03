@@ -1,14 +1,12 @@
 #ifndef INVENTORYFORM_H
 #define INVENTORYFORM_H
 
-#include "custommodels.h"
 #include "customdelegates.h"
 
 #include <QWidget>
+#include <Inventory>
 
-namespace Ui {
-class InventoryForm;
-}
+namespace Ui { class InventoryForm; }
 
 class InventoryForm : public QWidget
 {

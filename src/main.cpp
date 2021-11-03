@@ -1,24 +1,33 @@
 #include "mainwindow.h"
-#include "custommodels.h"
 
 #include <QApplication>
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlError>
 
+#include <User>
+#include <Customer>
+#include <CustomerPayment>
+#include <Supplier>
+#include <SupplierPayment>
+#include <Product>
+#include <Inventory>
+#include <Family>
+#include <Category>
+#include <Cash>
+
 QSqlDatabase db;
-UserModel *users;
-CustomerModel *customers;
-CustomerPaymentstModel *customerPayments;
 
-SupplierModel *suppliers;
-SupplierPaymentModel *supplierPayments;
-
-ProductModel *products;
-InventoryModel *inventory;
-FamilyModel *familys;
-CategoryModel *categors;
-CashModel *cash;
+User *users;
+Customer *customers;
+CustomerPayment *customerPayments;
+Supplier *suppliers;
+SupplierPayment *supplierPayments;
+Product *products;
+Inventory *inventory;
+Family *familys;
+Category *categors;
+Cash *cash;
 
 int main(int argc, char *argv[])
 {
@@ -34,16 +43,16 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    users = new UserModel(nullptr, db);
-    customers = new CustomerModel(nullptr, db);
-    customerPayments = new CustomerPaymentstModel(nullptr, db);
-    suppliers = new SupplierModel(nullptr, db);
-    supplierPayments = new SupplierPaymentModel(nullptr, db);
-    products = new ProductModel(nullptr, db);
-    inventory = new InventoryModel(nullptr, db);
-    familys= new FamilyModel(nullptr, db);
-    categors = new CategoryModel(nullptr, db);
-    cash = new CashModel(users, db);
+    users = new User(nullptr, db);
+    customers = new Customer(nullptr, db);
+    customerPayments = new CustomerPayment(nullptr, db);
+    suppliers = new Supplier(nullptr, db);
+    supplierPayments = new SupplierPayment(nullptr, db);
+    products = new Product(nullptr, db);
+    inventory = new Inventory(nullptr, db);
+    familys= new Family(nullptr, db);
+    categors = new Category(nullptr, db);
+    cash = new Cash(users, db);
 
     users->select();
     customers->select();

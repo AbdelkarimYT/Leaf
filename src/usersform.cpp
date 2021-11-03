@@ -1,14 +1,14 @@
 #include "usersform.h"
 #include "ui_usersform.h"
 
-extern UserModel *users;
+extern User *users;
 
 UsersForm::UsersForm(QWidget *parent) : QWidget(parent), ui(new Ui::UsersForm)
 {
     ui->setupUi(this);
     ui->usersTableView->setModel(users);
-    ui->usersTableView->setItemDelegateForColumn(UserModel::Columns::created_at, new QDateTimeEditDelegate);
-    ui->usersTableView->setItemDelegateForColumn(UserModel::Columns::updated_at, new QDateTimeEditDelegate);
+    ui->usersTableView->setItemDelegateForColumn(User::Columns::created_at, new QDateTimeEditDelegate);
+    ui->usersTableView->setItemDelegateForColumn(User::Columns::updated_at, new QDateTimeEditDelegate);
 
     //ui->usersTableView->horizontalHeader()->setSectionResizeMode(UserModel::Columns::id, QHeaderView::ResizeToContents);
     //ui->usersTableView->horizontalHeader()->setSectionResizeMode(UserModel::Columns::name, QHeaderView::Stretch);

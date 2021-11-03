@@ -22,10 +22,12 @@ find_package(Qt6 COMPONENTS Sql REQUIRED)
 #=================== INCLUSION OF Project Files ====================#
 set(FORMS_DIR "${CMAKE_SOURCE_DIR}/forms")
 set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
+set(MODELS_DIR "${CMAKE_SOURCE_DIR}/include/Models")
 set(RESOURCES_DIR "${CMAKE_SOURCE_DIR}/res")
 set(SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
 
 include_directories(${FORMS_DIR})
+include_directories(${MODELS_DIR})
 include_directories(${INCLUDE_DIR})
 include_directories(${RESOURCES_DIR})
 include_directories(${SOURCE_DIR})
@@ -34,6 +36,7 @@ file(GLOB_RECURSE SOURCES
     "${FORMS_DIR}/*.ui"
     "${RESOURCES_DIR}/*.qrc"
     "${INCLUDE_DIR}/*.h"
+    "${MODELS_DIR}/*.h"
     "${SOURCE_DIR}/*.cpp"
 )
 

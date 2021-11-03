@@ -1,14 +1,12 @@
 #ifndef SUPPLIESFORM_H
 #define SUPPLIESFORM_H
 
-#include "custommodels.h"
 #include "customdelegates.h"
 
 #include <QWidget>
+#include <Supplier>
 
-namespace Ui {
-class SuppliesForm;
-}
+namespace Ui { class SuppliesForm; }
 
 class SuppliesForm : public QWidget
 {

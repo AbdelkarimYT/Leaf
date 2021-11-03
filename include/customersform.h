@@ -1,14 +1,12 @@
 #ifndef CUSTOMERSFORM_H
 #define CUSTOMERSFORM_H
 
-#include "custommodels.h"
 #include "customdelegates.h"
 
 #include <QWidget>
+#include <Customer>
 
-namespace Ui {
-class CustomersForm;
-}
+namespace Ui { class CustomersForm; }
 
 class CustomersForm : public QWidget
 {

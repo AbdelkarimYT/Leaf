@@ -1,7 +1,7 @@
 #include "customersform.h"
 #include "ui_customersform.h"
 
-extern CustomerModel *customers;
+extern Customer *customers;
 
 CustomersForm::CustomersForm(QWidget *parent) : QWidget(parent), ui(new Ui::CustomersForm)
 {

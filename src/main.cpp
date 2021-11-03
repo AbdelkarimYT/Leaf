@@ -1,6 +1,6 @@
-#include "mainwindow.h"
-
 #include <QApplication>
+#include <MainWindow>
+
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlError>

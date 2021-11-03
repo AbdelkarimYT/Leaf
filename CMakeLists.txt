@@ -23,20 +23,24 @@ find_package(Qt6 COMPONENTS Sql REQUIRED)
 set(FORMS_DIR "${CMAKE_SOURCE_DIR}/forms")
 set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 set(MODELS_DIR "${CMAKE_SOURCE_DIR}/include/Models")
+set(CONTROLLERS_DIR "${CMAKE_SOURCE_DIR}/include/Controllers")
+set(DELEGATES_DIR "${CMAKE_SOURCE_DIR}/include/Delegates")
 set(RESOURCES_DIR "${CMAKE_SOURCE_DIR}/res")
 set(SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
 
 include_directories(${FORMS_DIR})
-include_directories(${MODELS_DIR})
 include_directories(${INCLUDE_DIR})
-include_directories(${RESOURCES_DIR})
+
+include_directories(${MODELS_DIR})
+include_directories(${CONTROLLERS_DIR})
+include_directories(${DELEGATES_DIR})
+
 include_directories(${SOURCE_DIR})
 
 file(GLOB_RECURSE SOURCES
     "${FORMS_DIR}/*.ui"
     "${RESOURCES_DIR}/*.qrc"
     "${INCLUDE_DIR}/*.h"
-    "${MODELS_DIR}/*.h"
     "${SOURCE_DIR}/*.cpp"
 )
 
@@ -59,6 +63,11 @@ endif()
 # Add the target includes for MY_PROJECT
 target_include_directories(Leaf PRIVATE ${FORMS_DIR})
 target_include_directories(Leaf PRIVATE ${INCLUDE_DIR})
+
+target_include_directories(Leaf PRIVATE ${MODELS_DIR})
+target_include_directories(Leaf PRIVATE ${CONTROLLERS_DIR})
+target_include_directories(Leaf PRIVATE ${DELEGATES_DIR})
+
 target_include_directories(Leaf PRIVATE ${RESOURCES_DIR})
 target_include_directories(Leaf PRIVATE ${SOURCE_DIR})
 
